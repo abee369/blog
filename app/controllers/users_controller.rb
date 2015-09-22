@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-	before_action :temp_user
 	def index
   	end
 
@@ -8,6 +7,7 @@ class UsersController < ApplicationController
   	end
 
 	def new
+		@user = User.new
   	end
 
 	def edit
@@ -17,7 +17,8 @@ class UsersController < ApplicationController
   		@user= User.new(user_params)
 
 	  	if @user.save
-	  		redirect_to @user
+	  		session[:user_id] = @user.id
+			redirect_to articles_path
 	  	else
 	  		render 'new'
 	  	end
@@ -29,15 +30,9 @@ class UsersController < ApplicationController
   	def update
   	end
 
-  
-
 private
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
-  end
-
-  def temp_user
-  	@user = User.new
   end
 
 end

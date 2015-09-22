@@ -2,7 +2,7 @@
 
 <p><%= @error %></p>
 
-<%= form_for :session, url: { action: 'create' } do |f| %>
+<%= form_for :session, url: { controller: 'sessions', action: 'create' } do |f| %>
 <ul>
   <li><%= f.label :username, 'Username:' %></li>
   <li><%= f.text_field :username %></li>

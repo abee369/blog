@@ -23,9 +23,9 @@ Rails.application.routes.draw do
   delete '/articles/:article_id/comments/:id', to: 'comments#destroy', as: 'article_comment'
 
 
-  get '/sessions/new', to:'sessions#new', as: 'new_login'
+  get '/sessions/new', to:'sessions#new', as: 'new_session'
   post '/sessions/create', to: 'sessions#create', as: 'in_session'
-  post '/sessions/delete', to: 'sessions#destroy', as: 'out_session'
+  delete 'log_out' => 'sessions#destroy'
 
   get '/users', to: 'users#index', as: 'users'
   get '/users/new', to: 'users#new', as: 'new_user'
