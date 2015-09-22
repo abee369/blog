@@ -24,6 +24,8 @@ Rails.application.routes.draw do
 
 
   get '/sessions/new', to:'sessions#new', as: 'new_login'
+  post '/sessions/create', to: 'sessions#create', as: 'in_session'
+  post '/sessions/delete', to: 'sessions#destroy', as: 'out_session'
 
   get '/users', to: 'users#index', as: 'users'
   get '/users/new', to: 'users#new', as: 'new_user'
