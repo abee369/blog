@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  before_filter :temp_user
   def index
   	@articles = Article.all
   end
@@ -45,5 +46,9 @@ class ArticlesController < ApplicationController
 private
   def article_params
     params.require(:article).permit(:title, :text)
+  end
+
+  def temp_user
+    @user = User.new
   end
 end
