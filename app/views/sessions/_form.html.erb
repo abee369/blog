@@ -1,2 +1,13 @@
 <h3>Log In</h3>
 
+<p><%= @error %></p>
+
+<%= form_for :session, url: { action: 'create' } do |f| %>
+<ul>
+  <li><%= f.label :username, 'Username:' %></li>
+  <li><%= f.text_field :username %></li>
+  <li><%= f.label :password, 'Password:' %></li>
+  <li><%= f.password_field :password %></li>
+  <li><%= f.submit 'Log In' %></li>
+</ul>
+<% end %>
