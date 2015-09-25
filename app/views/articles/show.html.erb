@@ -1,18 +1,32 @@
-<p>
-	<strong>Title:</strong>
-	<%= @article.title %>
-</p>
+<div id="show_articles">
+	<div class = "articles">
+		<p>
+			<strong>Title:</strong>
+			<%= @article.title %>
+		</p>
 
-<p>
-	<strong>Text:</strong>
-	<%= @article.text %>	
-</p>
+		<p>
+			<strong>Text:</strong>
+			<%= @article.text %>	
+		</p>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
+		<p>
+			<strong>Location:</strong>
+			<%= @article.location %>	
+		</p>
+		
+		<p>
+			<strong>Food:</strong>
+			<%= @article.food %>	
+		</p>
 
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
+		<h2>Comments</h2>
+		<%= render @article.comments %>
 
-<%= link_to 'Edit Article', edit_article_path(@article) %>
-<%= link_to 'Back to Articles', articles_path %>
+		<h2>Add a comment:</h2>
+		<%= render 'comments/form' %>
+
+		<%= link_to 'Edit Article', edit_article_path(@article) %>
+		<%= link_to 'Back to Articles', articles_path %>
+	</div>
+</div>

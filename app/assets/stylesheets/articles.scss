@@ -1,3 +1,18 @@
 // Place all the styles related to the articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#show_articles p, h2{
+	color: #FFFF33;
+}
+
+#article_form p{
+	color:#00CC33;
+}
+
+#article_form input,{
+	padding: 5px;
+	border: solid 1px #dcdcdc;
+	border-radius: 5px;
+	transition: box-shadow 0.2s, border 0.2s;
+}
